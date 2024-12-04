@@ -15,7 +15,6 @@
 <meta name="rating" content="Safe For Kids">
 <meta name="copyright" content="2024, Benjamin Dupont">
 <meta name="author" content="Benjamin Dupont">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Benjamin Dupont's Personal Website</title>
 <!--
@@ -107,10 +106,11 @@ http://www.tooplate.com/view/2087-kalay
         					</li>
 
                               <li>
-                              <a target="_blank" href="https://www.linkedin.com/in/ben-dupont/" class="fa fa-linkedin" aria-label="LinkedIn Profile"></a>
-                              </li>
-                              <li>
-                              <a target="_blank" href="https://github.com/ben-du-pont" class="fa fa-github" aria-label="GitHub Profile"></a>
+                              <ul class="social-icon">
+                                   <!-- <li><a target="_blank" href="https://www.facebook.com/" class="fa fa-facebook"></a></li> -->
+                                   <li><a target="_blank" href="https://www.linkedin.com/in/ben-dupont/" class="fa fa-linkedin"></a></li>
+                                   <li><a target="_blank" href="https://github.com/ben-du-pont" class="fa fa-github"></a></li>
+                              </ul>
                               </li>
         
         
@@ -363,7 +363,7 @@ http://www.tooplate.com/view/2087-kalay
 
 
 <!-- PROJECT SECTION -->
-<section id="project" class="parallax-section">
+<section id="about" class="parallax-section">
      <div class="container">
           <div class="row">
 
@@ -376,7 +376,7 @@ http://www.tooplate.com/view/2087-kalay
                <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.4s">
                     <a target="_blank" href="https://github.com/ben-du-pont/Neural-network-from-scratch">
                     <div class="service-thumb">
-                         <i class="fa fa-film" style="font-size: 45px; padding-left: 15px;"></i>
+                         <i class="fa fa-hexagon-nodes" style="font-size: 45px; padding-left: 15px;"></i>
                          <h4 class="white-color">Neural Network from Scratch</h4>
                          <p>Small project to practice my understanding of a simple Neural Network architecture by coding the forward and backward propagation myself without using Tensorflow (only Numpy)</p>
                          <div class="skill-container">
@@ -384,6 +384,87 @@ http://www.tooplate.com/view/2087-kalay
                          </div>
                     </div>
                     </a>
+               </div>
+               
+               <!-- Semester Project -->
+               <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="service-thumb">
+                    <a target="_blank" href="https://idsc.ethz.ch/research-frazzoli/research-projects/autonomous-gokarts.html"></a>
+                    <i class="fa fa-road" style="font-size: 45px; padding-left: 15px;"></i>
+                    <h4 class="white-color">Obstacle Detection for Racing Karts</h4>
+                    <p>Developed a dynamic occupancy grid for obstacle detection in autonomous racing go-karts as part of a semester project at ETH Zurich's IDSC group.</p>
+                    <div class="skill-container">
+                         <button class="skill"><h6>Python</h6></button>
+                         <button class="skill"><h6>ROS</h6></button>
+                    </div>
+                    </div>
+               </div>
+
+               <!-- Master Thesis -->
+               <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="service-thumb">
+                    <a target="_blank" href="https://github.com/ben-du-pont/drone_simulator/tree/uwb_simulator"></a>
+                    <i class="fa fa-drone" style="font-size: 45px; padding-left: 15px;"></i>
+                    <h4 class="white-color">UWB Anchor Initialization for Drones</h4>
+                    <p>Explored online initialization of Ultra-Wideband (UWB) anchors to enable precise navigation for autonomous drones during my Master thesis at AAU's CNS group.</p>
+                    <div class="skill-container">
+                         <button class="skill"><h6>Python</h6></button>
+                         <button class="skill"><h6>C++</h6></button>
+                         <button class="skill"><h6>ROS</h6></button>
+                    </div>
+                    </div>
+               </div>
+
+               <!-- Toy Car Simulator -->
+               <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="service-thumb">
+                    <a target="_blank" href="https://github.com/ben-du-pont/toy_car_controller"></a>
+                    <i class="fa fa-car" style="font-size: 45px; padding-left: 15px;"></i>
+                    <h4 class="white-color">Toy Car Simulator</h4>
+                    <p>Created a toy car simulator featuring a 4-wheel vehicle model navigating Formula Student-like tracks using PID and pure pursuit controllers. Ongoing work involves transitioning to reinforcement learning-based control.</p>
+                    <div class="skill-container">
+                         <button class="skill"><h6>Python</h6></button>
+                    </div>
+                    </div>
+               </div>
+
+               <!-- Machine Learning Exercises -->
+               <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="service-thumb">
+                    <i class="fa fa-brain" style="font-size: 45px; padding-left: 15px;"></i>
+                    <h4 class="white-color">Machine Learning Exercises</h4>
+                    <p>Completed four comprehensive exercises from ETH Zurich's Machine Learning course, covering topics such as regression, classification, clustering, and neural networks.</p>
+                    <div class="skill-container">
+                         <button class="skill"><h6>Python</h6></button>
+                         <button class="skill"><h6>Pytorch</h6></button>
+                    </div>
+                    </div>
+               </div>
+
+               <!-- Recursive Estimation Exercise -->
+               <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="service-thumb">
+                    <i class="fa fa-satellite" style="font-size: 45px; padding-left: 15px;"></i>
+                    <h4 class="white-color">State Estimation Filters</h4>
+                    <p>Developed Kalman and particle filters to estimate a car's state using data from intermittent sensors, as part of an exercise in the Recursive Estimation course at ETH Zurich.</p>
+                    <div class="skill-container">
+                         <button class="skill"><h6>Python</h6></button>
+                    </div>
+                    </div>
+               </div>
+
+               <!-- VA4MR VIO Exercise -->
+               <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="service-thumb">
+                    <i class="fa fa-camera" style="font-size: 45px; padding-left: 15px;"></i>
+                    <h4 class="white-color">Monocular Visual Odometry</h4>
+                    <p>Implemented a visual odometry pipeline to estimate camera trajectories and reconstruct 3D landmarks. 
+                    Utilized two-view geometry for initialization, KLT tracking, RANSAC for pose estimation, and continuous 
+                    landmark triangulation. Evaluated the pipeline on Parking, KITTI, and Malaga datasets.</p>
+                    <div class="skill-container">
+                         <button class="skill"><h6>MATLAB</h6></button>
+                    </div>
+                    </div>
                </div>
 
                <!-- <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.4s">
@@ -489,7 +570,7 @@ http://www.tooplate.com/view/2087-kalay
 
 
 <!-- EXTRACURRICULAR SECTION -->
-<section id="extra" class="parallax-section">
+<section id="serice" class="parallax-section">
    <div class="container">
         <div class="row">
                

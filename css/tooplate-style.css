@@ -277,6 +277,7 @@ a:hover, a:active, a:focus {
 
 .skill {
   margin-right: 10px;
+  margin-bottom: 5px; /* Add margin to create space between rows */
   padding: 2px 7px;
   border-style: solid;
   border-radius: 2em;

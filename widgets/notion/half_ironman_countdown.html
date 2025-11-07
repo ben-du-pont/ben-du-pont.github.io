@@ -1,70 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Montserrat:900" rel="stylesheet">
-  <title>70.3 Countdown</title>
-  <style>
-    :root { color-scheme: light dark; }
-    body {
-      margin:0; padding:0;
-      background-color: transparent;
-      display:flex; justify-content:center; align-items:center;
-      height:100vh; font-family:'Montserrat',sans-serif;
-      color: var(--text-color, #222);
-    }
-    .container {
-      text-align:center;
-      max-width:320px;
-      padding:24px; background:#000; border-radius:12px;
-    }
-    .title {
-      font-size:1.1em; font-weight:700; margin-bottom:10px;
-      color: #F0A202;
-    }
-    #timer {
-      text-transform:uppercase; letter-spacing:4px;
-    }
-    .time-block {
-      display:inline-block; padding:16px; width:90px; margin:4px;
-      border-radius:8px; background:#1e1e1e; color:#F0A202;
-    }
-    .numbers { font-size:3.2em; font-family:'Lato',sans-serif; text-align:center; }
-    @media (prefers-color-scheme: dark) {
-      body { color:#eee; }
-      .container { background:#111; }
-      .time-block { background:#222; }
-    }
-  </style>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link href="https://fonts.googleapis.com/css?family=Lato:400,700|Montserrat:900" rel="stylesheet"/>
+<title>Ironman 70.3 Countdown</title>
+<style>
+html, body { margin:0; padding:0; height:100%; display:flex; justify-content:center; align-items:center; background:transparent !important; color-scheme: light dark; font-family:'Lato',sans-serif; overflow:hidden; }
+.container { text-align:center; width:100%; max-width:900px; }
+.title { font-size:clamp(0.8rem,1.5vw,1.2rem); font-weight:700; margin-bottom:0.4em; color:#F0A202; }
+#timer { display:flex; justify-content:center; gap:10px; flex-wrap:nowrap; text-transform:uppercase; letter-spacing:2px; }
+.time-block { flex:1; min-width:80px; max-width:120px; border-radius:5px; padding:10px; display:flex; flex-direction:column; align-items:center; }
+.days { background:#EF2F3C; color:#fff; }
+.hours { background:#eeeeee; color:#183059; }
+.minutes { background:#276FBF; color:#fff; }
+.seconds { background:#F0A202; color:#183059; }
+.numbers { font-family:'Montserrat',sans-serif; font-size: clamp(1.5rem,4vw,3rem); line-height:1; margin-bottom:0.2em; }
+.label { font-size:clamp(0.6rem,1vw,0.8rem); opacity:0.8; }
+</style>
 </head>
 <body>
-  <div class="container">
-    <div class="title">IRONMAN 70.3 – Jul 5 2026 08:00</div>
-    <div id="timer">
-      <div class="time-block"><div id="days" class="numbers"></div>Days</div>
-      <div class="time-block"><div id='hours' class='numbers'></div>Hours</div>
-      <div class="time-block"><div id='minutes' class='numbers'></div>Minutes</div>
-      <div class="time-block"><div id='seconds' class='numbers'></div>Seconds</div>
-    </div>
+<div class="container">
+  <div class="title">IRONMAN 70.3 – Jul 5 2026 08:00</div>
+  <div id="timer">
+    <div class="time-block days"><div id="days" class="numbers"></div><div class="label">Days</div></div>
+    <div class="time-block hours"><div id="hours" class="numbers"></div><div class="label">Hours</div></div>
+    <div class="time-block minutes"><div id="minutes" class="numbers"></div><div class="label">Minutes</div></div>
+    <div class="time-block seconds"><div id="seconds" class="numbers"></div><div class="label">Seconds</div></div>
   </div>
-  <script>
-    const target = new Date('Jul 5, 2026 08:00:00').getTime();
-    function update() {
-      const now = Date.now();
-      const diff = target - now;
-      if (diff < 0) return;
-      const days = Math.floor(diff / (1000*60*60*24));
-      const hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
-      const minutes = Math.floor((diff % (1000*60*60)) / (1000*60));
-      const seconds = Math.floor((diff % (1000*60)) / 1000);
-      document.getElementById('days').textContent = days;
-      document.getElementById('hours').textContent = hours;
-      document.getElementById('minutes').textContent = minutes;
-      document.getElementById('seconds').textContent = seconds;
-    }
-    setInterval(update,1000);
-    update();
-  </script>
+</div>
+<script>
+const target = new Date('Jul 5, 2026 08:00:00').getTime();
+function update(){const now=Date.now();const diff=target-now;if(diff<0)return;const days=Math.floor(diff/(1000*60*60*24));const hours=Math.floor((diff%(1000*60*60*24))/(1000*60*60));const minutes=Math.floor((diff%(1000*60*60))/(1000*60));const seconds=Math.floor((diff%(1000*60))/1000);document.getElementById('days').textContent=days;document.getElementById('hours').textContent=hours;document.getElementById('minutes').textContent=minutes;document.getElementById('seconds').textContent=seconds;}
+setInterval(update,1000);update();
+</script>
 </body>
 </html>

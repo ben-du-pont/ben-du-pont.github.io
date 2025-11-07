@@ -4,55 +4,52 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Montserrat:900" rel="stylesheet">
-  <title>Ironman Countdown</title>
+  <title>70.3 Countdown</title>
   <style>
     :root { color-scheme: light dark; }
     body {
       margin:0; padding:0;
       background-color: transparent;
       display:flex; justify-content:center; align-items:center;
-      height:100vh; font-family:'Lato',sans-serif;
-      color: var(--text-color, #183059);
+      height:100vh; font-family:'Montserrat',sans-serif;
+      color: var(--text-color, #222);
     }
     .container {
       text-align:center;
-      max-width:300px;
-      padding:20px;
+      max-width:320px;
+      padding:24px; background:#000; border-radius:12px;
     }
     .title {
-      font-size:1.2em; font-weight:700; margin-bottom:10px;
-      color: var(--title-color, #EF2F3C);
+      font-size:1.1em; font-weight:700; margin-bottom:10px;
+      color: #F0A202;
     }
     #timer {
-      text-transform:uppercase;
-      letter-spacing:4px;
+      text-transform:uppercase; letter-spacing:4px;
     }
     .time-block {
-      display:inline-block; padding:15px; width:80px; border-radius:5px; margin:2px;
+      display:inline-block; padding:16px; width:90px; margin:4px;
+      border-radius:8px; background:#1e1e1e; color:#F0A202;
     }
-    .days { background:#EF2F3C; color:#fff; }
-    .hours { background:#eeeeee; color:#183059; }
-    .minutes { background:#276FBF; color:#fff; }
-    .seconds { background:#F0A202; color:#183059; }
-    .numbers { font-family:'Montserrat',sans-serif; font-size:3.5em; text-align:center; }
+    .numbers { font-size:3.2em; font-family:'Lato',sans-serif; text-align:center; }
     @media (prefers-color-scheme: dark) {
-      body { color: #eee; }
-      .hours { background:#333; color:#eee; }
+      body { color:#eee; }
+      .container { background:#111; }
+      .time-block { background:#222; }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="title">IRONMAN – Oct 4 2026 08:00</div>
+    <div class="title">IRONMAN 70.3 – Jul 5 2026 08:00</div>
     <div id="timer">
-      <div class="time-block days"><div id="days" class="numbers"></div>Days</div>
-      <div class="time-block hours"><div id="hours" class="numbers"></div>Hours</div>
-      <div class="time-block minutes"><div id="minutes" class="numbers"></div>Minutes</div>
-      <div class="time-block seconds"><div id="seconds" class="numbers"></div>Seconds</div>
+      <div class="time-block"><div id="days" class="numbers"></div>Days</div>
+      <div class="time-block"><div id='hours' class='numbers'></div>Hours</div>
+      <div class="time-block"><div id='minutes' class='numbers'></div>Minutes</div>
+      <div class="time-block"><div id='seconds' class='numbers'></div>Seconds</div>
     </div>
   </div>
   <script>
-    const target = new Date('Oct 4, 2026 08:00:00').getTime();
+    const target = new Date('Jul 5, 2026 08:00:00').getTime();
     function update() {
       const now = Date.now();
       const diff = target - now;

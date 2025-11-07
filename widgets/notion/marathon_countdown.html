@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Lato:900" rel="stylesheet">
+  <title>Marathon Countdown</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body {
+      margin:0; padding:0;
+      background-color: transparent;
+      display:flex; justify-content:center; align-items:center;
+      height:100vh; font-family:'Montserrat',sans-serif;
+      color: var(--text-color, #333);
+    }
+    .container {
+      text-align:center;
+      max-width:280px;
+      padding:20px; border:2px solid #276FBF; border-radius:10px;
+    }
+    .title {
+      font-size:1.3em; font-weight:900; margin-bottom:12px;
+      color: #276FBF;
+    }
+    #timer {
+      text-transform:uppercase; letter-spacing:3px;
+    }
+    .time-block {
+      display:block; margin:8px auto; padding:12px; width:100%;
+      border-radius:6px;
+      background:#eeeeee; color:#183059;
+    }
+    .numbers { font-size:2.8em; font-family:'Lato',sans-serif; text-align:center; }
+    @media (prefers-color-scheme: dark) {
+      body { color:#ddd; }
+      .container { border-color:#4d88ff; }
+      .time-block { background:#444; color:#eee; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="title">MARATHON – Apr 12 2026 08:00</div>
+    <div id="timer">
+      <div class="time-block"><div id="days" class="numbers"></div> Days</div>
+      <div class="time-block"><div id="hours" class="numbers"></div> Hours</div>
+      <div class="time-block"><div id="minutes" class="numbers"></div> Minutes</div>
+      <div class="time-block"><div id="seconds" class="numbers"></div> Seconds</div>
+    </div>
+  </div>
+  <script>
+    const target = new Date('Apr 12, 2026 08:00:00').getTime();
+    function update() {
+      const now = Date.now();
+      const diff = target - now;
+      if (diff < 0) return;
+      const days = Math.floor(diff / (1000*60*60*24));
+      const hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+      const minutes = Math.floor((diff % (1000*60*60)) / (1000*60));
+      const seconds = Math.floor((diff % (1000*60)) / 1000);
+      document.getElementById('days').textContent = days;
+      document.getElementById('hours').textContent = hours;
+      document.getElementById('minutes').textContent = minutes;
+      document.getElementById('seconds').textContent = seconds;
+    }
+    setInterval(update,1000);
+    update();
+  </script>
+</body>
+</html>

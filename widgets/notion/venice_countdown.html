@@ -53,6 +53,10 @@
   .head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
   .brand { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; letter-spacing: .06em;
            font-size: clamp(14px, min(5cqi, 11cqh), 44px); line-height: 1; text-transform: uppercase; }
+  .brand { display: flex; align-items: center; gap: .35em; }
+  .brand .logo { height: 1.45em; width: auto; flex: none; }
+  .mark { position: absolute; right: -6%; bottom: -34%; height: 80cqh; width: auto; opacity: .08; pointer-events: none; }
+  .card > *:not(.mark) { position: relative; }
   .brand .im { color: var(--im); }
   .brand .tag { color: var(--tag); }
   .brand .race { color: var(--race); }
@@ -86,14 +90,16 @@
     .big .hms { font-size: clamp(11px, min(4cqi, 12cqh), 24px); color: var(--muted); font-variant-numeric: tabular-nums; }
     .meta { display: none; }
   }
+  @container (max-width: 380px) or (max-height: 170px) { .mark { height: 90cqh; bottom: -20%; } }
   @container (max-height: 90px) { .card::before { height: 3px; } .head { display: none; } }
   @media (prefers-reduced-motion: reduce) { .num.tick { animation: none; } .bar i { transition: none; } }
 </style>
 </head>
 <body>
 <div class="card" role="timer" aria-live="off">
+  <img class="mark" src="img/venice_mark.png" alt="">
   <div class="head">
-    <div class="brand"><span class="im">IRONMAN</span> <span class="tag">70.3</span> <span class="race">Venice-Jesolo</span></div>
+    <div class="brand"><img class="logo" src="img/venice_mark.png" alt=""><span class="im">IRONMAN</span> <span class="tag">70.3</span> <span class="race">Venice-Jesolo</span></div>
     <div class="meta">Sat 24 Apr 2027 · Jesolo</div>
   </div>
   <div class="blocks" id="blocks">

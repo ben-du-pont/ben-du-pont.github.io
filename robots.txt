@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /widgets/
+Sitemap: https://ben-du-pont.github.io/sitemap.xml
